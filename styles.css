@@ -1,0 +1,105 @@
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: linear-gradient(-45deg,#0f172a,#1e293b,#0b1120,#020617);
+  background-size: 400% 400%;
+  animation: gradientMove 18s ease infinite;
+  color: white;
+}
+
+.app {
+  max-width: 1100px;
+  margin: auto;
+  padding: 24px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.header p { opacity: .7; margin: 0; }
+
+.card {
+  background: rgba(255,255,255,0.08);
+  backdrop-filter: blur(16px);
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 22px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fit,minmax(180px,1fr));
+}
+
+input, select {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  outline: none;
+}
+
+button {
+  padding: 12px;
+  border-radius: 14px;
+  border: none;
+  background: linear-gradient(135deg,#2563eb,#4f46e5);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.charts {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+}
+
+canvas { height: 300px !important; }
+
+/* ===== Animations ===== */
+
+@keyframes gradientMove {
+  0%{background-position:0% 50%}
+  50%{background-position:100% 50%}
+  100%{background-position:0% 50%}
+}
+
+@keyframes pageEnter {
+  from {opacity:0; transform:translateY(40px)}
+  to {opacity:1; transform:translateY(0)}
+}
+.page-enter { animation: pageEnter .8s ease-out; }
+
+@keyframes float {
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+}
+.card-float { animation: float 7s ease-in-out infinite; }
+
+.card-float:hover {
+  transform: translateY(-14px) scale(1.02);
+}
+
+@keyframes glowPulse {
+  0%{box-shadow:0 0 0 rgba(37,99,235,.6)}
+  50%{box-shadow:0 0 28px rgba(37,99,235,.95)}
+  100%{box-shadow:0 0 0 rgba(37,99,235,.6)}
+}
+.btn-glow { animation: glowPulse 2.8s infinite; }
+
+input:focus, select:focus {
+  transform: scale(1.03);
+  box-shadow: 0 0 16px rgba(99,102,241,.7);
+}
+
+@keyframes revealUp {
+  from {opacity:0; transform:translateY(60px)}
+  to {opacity:1; transform:translateY(0)}
+}
+.chart-reveal { animation: revealUp 1s ease forwards; }

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BuildWise AI Dashboard</title>
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <div class="page-enter app">
+
+    <header class="header">
+      <div>
+        <h1>BuildWise AI</h1>
+        <p>Intelligent Construction Planning Dashboard</p>
+      </div>
+      <button id="themeBtn" class="btn-glow">Toggle Theme</button>
+    </header>
+
+    <!-- Inputs -->
+    <section class="card card-float">
+      <h3>Project Inputs</h3>
+
+      <div class="controls">
+        <select id="projectType">
+          <option value="residential">Residential</option>
+          <option value="commercial">Commercial</option>
+          <option value="renovation">Renovation</option>
+        </select>
+
+        <input id="budget" type="number" placeholder="Budget (₹)" />
+
+        <select id="complexity">
+          <option value="standard">Standard</option>
+          <option value="advanced">Advanced AI</option>
+        </select>
+
+        <button id="runBtn" class="btn-glow">Run AI Analysis</button>
+      </div>
+    </section>
+
+    <!-- Charts -->
+    <section class="charts">
+
+      <div class="card chart-reveal card-float">
+        <h3>Cost Distribution</h3>
+        <canvas id="barChart"></canvas>
+      </div>
+
+      <div class="card chart-reveal card-float">
+        <h3>Phase Percentage</h3>
+        <canvas id="pieChart"></canvas>
+      </div>
+
+    </section>
+
+    <!-- History -->
+    <section class="card card-float">
+      <h3>Recent Projects</h3>
+      <div id="historyList"></div>
+    </section>
+
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
